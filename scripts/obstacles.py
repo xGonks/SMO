@@ -1,4 +1,3 @@
-import numpy as np
 
 scenario1 = {"c1": (300,150), "r1": 75,
              "c2": (250,600), "r2": 100,
