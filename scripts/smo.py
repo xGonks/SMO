@@ -87,4 +87,7 @@ class RobotPathPlanning:
 p = RobotPathPlanning()
 p.path_smo()
 
+#for graphing obstacles (access obstacles.py)
+#for name, scenario in scenarios.items():
+#    plot_scenario(scenario, title=name)#
 
