@@ -12,3 +12,6 @@ def generate(X,r):
     U=np.random.rand(len(X))
     X_1=X+V*(U*2*r-r)
     return X_1
+
+
+algorithm1(scenario)
