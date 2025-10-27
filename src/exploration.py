@@ -1,6 +1,7 @@
 import numpy as np
 
 from generate import generate
+from evaluate_fitness import evaluate_fitness
 
 def exploration(x,max_R,p_end,p_back):
     class son:
@@ -8,23 +9,29 @@ def exploration(x,max_R,p_end,p_back):
             self.individual = individual 
             self.parent = parent
     X=son(individual=x, parent=np.nan)
-    new_sols=[X.individual]
     X_init=X.individual
     R=np.random.uniform(0,max_R)
+    new_sols=[X.individual]
+    new_fits=[evaluate_fitness(X.individual)]
     path=[X.individual]
+    path_fits=[evaluate_fitness(X.individual)]
     while True:
         X_1=son(individual=generate(X.individual,R), parent=X)
-        new_sols.append(X_1.individual)
-        path.append(X_1.individual)
+        ind=X_1.individual
+        ind_fit=evaluate_fitness(ind)
+        new_sols.append(ind)
+        new_fits.append(ind_fit)
+        path.append(ind)
+        path_fits.append(ind_fit)
         X=X_1
         while np.random.rand()<p_back and X.parent!=np.nan:
             path.pop()
+            path_fits.pop()
             X=X.parent
         if np.random.rand()<p_end:
             break
-        #Evaluate
-        #X_best=X_best.indivual (np array)
-    return new_sols,path
+    
+    fit_best=min(new_fits)
+    X_best=new_sols[new_fits.index(fit_best)]
 
-x=np.array([3.5,3.0])
-sols,path=exploration(x,1.0,0.2,0.2)
+    return X_best,fit_best,path,path_fits
