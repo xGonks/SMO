@@ -1,4 +1,6 @@
 import numpy as np
+import math as mt
+
 def generate(X,r):
     v=np.zeros(len(X))
     k=0
@@ -12,6 +14,3 @@ def generate(X,r):
     U=np.random.rand(len(X))
     X_1=X+V*(U*2*r-r)
     return X_1
-
-
-algorithm1(scenario)
