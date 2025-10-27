@@ -11,3 +11,10 @@ fitness() #Gonzalo
 explotation() #Juan Pablo (adaptar codigo de Camila)
 exploration() #Juan Pablo
 return optimal,evolution
+
+## Reporte
+- [X] Introducción Camila
+- [X] Metodología Camila
+- [] Implementación Camila
+
+
