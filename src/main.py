@@ -40,7 +40,7 @@ def run_smo_visualization():
     print("Ejecutando Slime Mould Optimizer (SMO) para planificación de rutas...\n")
 
     pop_size = 20
-    max_iter = 500
+    max_iter = 200
     wait_iterations = 10
     max_r = 40
     path_size = 2
@@ -83,7 +83,7 @@ def run_smo_visualization():
     plt.tight_layout()
     plt.show()
 
-    print("\n✅ Optimización completada.")
+    print("\n Optimización completada.")
     print(f"Mejor fitness final: {evolution['best_fitness'][-1]:.4f}")
     print(f"Total de iteraciones: {len(evolution['best_fitness'])}")
 
